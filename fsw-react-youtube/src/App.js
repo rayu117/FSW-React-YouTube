@@ -13,8 +13,10 @@ function App() {
       <NavBar />
       <SearchBar />
       <main>
+        <Switch>
         <Route exact path="/"><h1>Youtube App</h1></Route>
         <Route path="/about" component={About} />
+        </Switch>
       </main>
       
       
