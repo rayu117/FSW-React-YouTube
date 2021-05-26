@@ -18,9 +18,7 @@ function App() {
             <SearchBar />
           </Route>
           <Route path="/about" component={About} />
-          <Route path="/video/:id" component={VideoCard} >
-            <VideoCard />
-          </Route>
+          <Route path="/video/:id" component={VideoCard} />
         </Switch>
       </main>
     </div>

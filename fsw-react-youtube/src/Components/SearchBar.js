@@ -42,7 +42,10 @@ export default function SearchBar() {
       <ul className="List">
         {vids.map((video) => (
           <>
-            <Link className="Link" to={`/video/${video.id.videoId}`}>
+            <Link
+              className="Link"
+              onclick = {OnClick}
+              to={`/video/${video.id.videoId}`}>
               <li key={video.id.videoId}>
                 <img
                   alt="youtube vid"
