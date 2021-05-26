@@ -38,7 +38,9 @@ export default function SearchBar() {
 
 <ul className="List">
 {vids.map((video) => (
-  <Link className="Link" to={`/videos/${video.id.videoId}`}>
+  // <VideoCard data={video} />
+  
+  <Link className="Link" to={`/video/${video.id.videoId}`}>
     <li key={video.id.videoId}>
       <img
         alt="youtube vid"
@@ -46,11 +48,11 @@ export default function SearchBar() {
         src={video.snippet.thumbnails.high.url}
       />
       <h3>{video.snippet.title}</h3>
-      <div>
+      {/* <div>
         <Route exact path='/'>
           <VideoCard/>
         </Route>
-      </div>
+      </div> */}
     </li>
   </Link>
 ))}
