@@ -5,13 +5,12 @@ import VideoCard from './Components/VideoCard'
 import About from './Components/About'
 import { Route, Switch } from "react-router-dom";
 
-
+// const renderVideo = (props) => {
+     
+//   }
 
 function App() {
-  // renderVideo = props => {
-  //   const { id } = props.match.params;
-  //   if 
-  // }
+  
   return (
     <div className="App">
       <NavBar />

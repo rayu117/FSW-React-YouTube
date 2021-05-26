@@ -1,11 +1,11 @@
 import React from 'react'
-import NavBar from './NavBar'
+import './About.css'
 
 export default function About() {
     return (
         <>
         {/* <NavBar /> */}
-        <div>
+        <div className='About'>
             <h2>About Page</h2>
         </div>
         <div>

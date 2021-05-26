@@ -7,6 +7,7 @@ import VideoCard from "./VideoCard";
 export default function SearchBar() {
   const [input, setInput] = useState("");
   const [vids, setVideo] = useState([]);
+  // const [userVid, setUserVid] = useState({})
   
 
   const inputChange = (e) => { setInput(e.target.value) 
@@ -18,7 +19,7 @@ export default function SearchBar() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log("handleSubmit")
+        // console.log("handleSubmit")
     const { data } = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?q=${input}&type=video&part=snippet&key=${process.env.REACT_APP_API_KEY}`)
     console.log(data)
     setVideo(data.items);

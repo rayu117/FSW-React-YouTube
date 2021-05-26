@@ -7,6 +7,7 @@ import VideoCard from "./VideoCard";
 export default function SearchBar() {
   const [input, setInput] = useState("");
   const [vids, setVideo] = useState([]);
+  const [userVid, setUserVid] = useState({})
   
 
   const inputChange = (e) => { setInput(e.target.value) 
@@ -18,10 +19,10 @@ export default function SearchBar() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log("handleSubmit")
+        // console.log("handleSubmit")
     const { data } = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?q=${input}&type=video&part=snippet&key=${process.env.REACT_APP_API_KEY}`)
     console.log(data)
-    setVideo(data);
+    setVideo(data.items);
     setInput("");
     };
   return (
@@ -38,7 +39,9 @@ export default function SearchBar() {
 
 <ul className="List">
 {vids.map((video) => (
-  <Link className="Link" to={`/videos/${video.id.videoId}`}>
+  // <VideoCard data={video} />
+  
+  <Link className="Link" to={`/video/${video.id.videoId}`}>
     <li key={video.id.videoId}>
       <img
         alt="youtube vid"
@@ -46,11 +49,11 @@ export default function SearchBar() {
         src={video.snippet.thumbnails.high.url}
       />
       <h3>{video.snippet.title}</h3>
-      <div>
+      {/* <div>
         <Route exact path='/'>
           <VideoCard/>
         </Route>
-      </div>
+      </div> */}
     </li>
   </Link>
 ))}
